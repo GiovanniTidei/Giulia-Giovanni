@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giovanni & Giulia - Il Nostro Matrimonio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #87CEEB;
+            --light-color: #f8f9fa;
+            --background-color: #f5f5f5;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: var(--primary-color);
+            background-color: var(--background-color);
+        }
+
+        .hero-section {
+            height: 100vh;
+            background-image: url('noi.jpeg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+            /* display: flex; */
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 2%;
+        }
+
+        .text-background {
+    background-color: rgba(0, 0, 0, 0.1);  /* Black with % opacity */
+    padding: 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(4px);  /* Optional: adds a slight blur effect */
+}
+
+        .section {
+            padding: 6rem 0;
+        }
+
+        .location-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            background-color: white;
+            margin: 0 auto;
+            max-width: 500px;
+        }
+
+        .location-card .p-4 {
+    text-align: center;
+}
+
+.location-card .btn-custom {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+        .location-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .btn-custom {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn-custom:hover {
+            background-color: #75bcd6;
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .countdown {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .gift-option {
+            padding: 2rem;
+            border-radius: 15px;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            margin: 0 auto;
+            max-width: 500px;
+        }
+
+        .gift-option:hover {
+            transform: translateY(-5px);
+        }
+
+        .section.bg-light {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Rest of the HTML remains exactly the same as in the original, starting from the hero section -->
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay">
+            <div class="container">
+                <div class="text-background">
+                    <h1 class="display-1 mb-4">Giulia & Giovanni</h1>
+                    <p class="lead mb-4">12 Luglio 2025</p>
+                    <p class="h3">Vi invitiamo a celebrare il nostro Matrimonio</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="countdown text-center" id="countdown">
+                <h2 class="mb-4">Mancano:</h2>
+                <div class="row">
+                    <div class="col">
+                        <h3 id="days">0</h3>
+                        <p>Giorni</p>
+                    </div>
+                    <div class="col">
+                        <h3 id="hours">0</h3>
+                        <p>Ore</p>
+                    </div>
+                    <div class="col">
+                        <h3 id="minutes">0</h3>
+                        <p>Minuti</p>
+                    </div>
+                    <div class="col">
+                        <h3 id="seconds">0</h3>
+                        <p>Secondi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center mb-5">La Cerimonia</h2>
+            <div class="row g-4 justify-content-center">
+                <!-- Chiesa -->
+                <div class="col-md-6">
+                    <div class="location-card">
+                        <img src="sanmarco.jpg" alt="Chiesa di San Marco" class="img-fluid">
+                        <div class="p-4">
+                            <h3>La Cerimonia</h3>
+                            <p>Chiesa di San Marco<br>Ponzano di Fermo<br>Ore 17:00</p>
+                            <a href="https://maps.app.goo.gl/ifLXRFrrubtAb67h6" target="_blank" class="btn btn-custom">
+                                <i class="fas fa-map-marker-alt me-2"></i>Indicazioni
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Villa -->
+                <div class="col-md-6">
+                    <div class="location-card">
+                        <img src="villacannone.jpg" alt="Villa Il Cannone" class="img-fluid">
+                        <div class="p-4">
+                            <h3>Il Ricevimento</h3>
+                            <p>Villa Il Cannone<br>Fermo</p>
+                            <a href="https://maps.app.goo.gl/BhTc9q5D5eWA5Rtc6" target="_blank" class="btn btn-custom">
+                                <i class="fas fa-map-marker-alt me-2"></i>Indicazioni
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <!-- <h2 class="text-center mb-5">Conferma la tua presenza</h2> -->
+            <div class="text-center">
+                <a href="https://api.whatsapp.com/send?phone=+393345044443"
+                   class="btn btn-custom btn-lg">
+                    <i class="fab fa-whatsapp me-2"></i>Confermateci la vostra presenza
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regalo Section -->
+    <section class="section">
+        <div class="container">
+            <!-- <h2 class="text-center mb-5">La vostra presenza è il regalo più grande, ma se desiderate contribuire alla nostra felicità...</h2> -->
+            <p class="text-center mb-5">Il dono più grande è festeggiare insieme a voi, ma se desiderate contribuire alla nostra felicità...</p>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="gift-option text-center">
+                        <i class="fas fa-gift fa-3x mb-4"></i>
+                        <!-- <h3>Lista Nozze</h3> -->
+                        <p>Aiutateci a rendere ancora più speciale il nostro futuro insieme</p>
+                        <a href="#" class="btn btn-custom">Lista Nozze</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="gift-option text-center">
+                        <i class="fas fa-plane fa-3x mb-4"></i>
+                        <!-- <h3>Luna di Miele</h3> -->
+                        <p>Contribuite a realizzzare il viaggio dei nostri sogni</p>
+                        <a href="#" class="btn btn-custom">Luna di Miele</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const weddingDate = new Date('2025-07-12T17:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerHTML = days;
+            document.getElementById('hours').innerHTML = hours;
+            document.getElementById('minutes').innerHTML = minutes;
+            document.getElementById('seconds').innerHTML = seconds;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
