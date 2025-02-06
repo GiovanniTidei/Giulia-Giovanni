@@ -6,23 +6,23 @@
     <title>Giovanni & Giulia - Il Nostro Matrimonio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-    <style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Catchy-Mager/1.0.0/font.css" rel="stylesheet">
+   <style>
         :root {
             --primary-color: #2c3e50;
-            --accent-color: #87CEEB;
-            --light-color: #f8f9fa;
-            --background-color: #f5f5f5;
+            --accent-color: #4682B4; /* Changed to Steel Blue */
+            --light-color: #F0F8FF; /* Changed to Alice Blue */
+            --background-color: #F0F8FF; /* Changed to match light-color */
         }
         
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            color: var(--primary-color);
-            background-color: var(--background-color);
-        }
-
+    font-family: 'Didot', 'Bodoni MT', 'Palatino', 'Book Antiqua', 'Garamond', serif;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+}
         .hero-section {
             height: 100vh;
-            background-image: url('noi.jpeg');
+            background-image: url('noi2.jpeg');
             background-size: cover;
             background-position: center;
             position: relative;
@@ -34,24 +34,54 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0,0,0,0.3);
-            /* display: flex; */
+            /* background: rgba(0,0,0,0.3); */
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
-            padding-top: 2%;
+            padding-top: 3%;
         }
 
         .text-background {
-    background-color: rgba(0, 0, 0, 0.1);  /* Black with % opacity */
-    padding: 2rem;
-    border-radius: 10px;
-    backdrop-filter: blur(2px);  /* Optional: adds a slight blur effect */
-}
+            /* background-color: rgba(0, 0, 0, 0); */
+            padding: 2rem;
+            /* border-radius: 10px;
+            backdrop-filter: blur(2px); */
+            
+        }
+
+        .text-background p {
+            color: white;
+            font-size: 1,5em;
+            font-weight: 900;
+            letter-spacing: 0px;
+            margin: 0;
+        }
 
         .section {
-            padding: 6rem 0;
+            padding: 5rem 0;
+        }
+
+        /* Stili per la sezione firma */
+        .signature-section {
+            padding: 4rem 0;
+            text-align: center;
+            background-color: var(--light-color);
+        }
+
+        .signature-box {
+            display: inline-block;
+            padding: 2rem;
+            border-top: 1px solid var(--accent-color);
+            border-bottom: 1px solid var(--accent-color);
+        }
+
+        .signature-names {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin: 0;
+            color: var(--primary-color);
         }
 
         .location-card {
@@ -65,13 +95,13 @@
         }
 
         .location-card .p-4 {
-    text-align: center;
-}
+            text-align: center;
+        }
 
-.location-card .btn-custom {
-    display: inline-block;
-    margin: 0 auto;
-}
+        .location-card .btn-custom {
+            display: inline-block;
+            margin: 0 auto;
+        }
 
         .location-card:hover {
             transform: translateY(-5px);
@@ -79,7 +109,7 @@
 
         .btn-custom {
             background-color: var(--accent-color);
-            color: var(--primary-color);
+            color: white;
             border: none;
             padding: 1rem 2rem;
             border-radius: 30px;
@@ -88,8 +118,8 @@
         }
 
         .btn-custom:hover {
-            background-color: #75bcd6;
-            color: var(--primary-color);
+            background-color: #385e7f;
+            color: white;
             transform: translateY(-2px);
         }
 
@@ -115,21 +145,30 @@
         }
 
         .section.bg-light {
-            background-color: white;
+            background-color: var(--light-color);
         }
     </style>
 </head>
 <body>
-    <!-- Rest of the HTML remains exactly the same as in the original, starting from the hero section -->
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-overlay">
             <div class="container">
                 <div class="text-background">
-                    <h1 class="display-1 mb-4">Giulia & Giovanni</h1>
+                    <!-- <h1 class="display-1 mb-4">Giovanni & Giulia</h1> -->
                     <p class="lead mb-4">12 Luglio 2025</p>
-                    <p class="h3">Vi invitiamo a celebrare il nostro Matrimonio</p>
+                    <p class="lead">Vi invitiamo a celebrare il nostro Matrimonio</p>
                 </div>
+            </div>
+        </div> 
+    </section>
+
+      <!-- signature section -->
+
+    <section class="signature-section">
+        <div class="container">
+            <div class="signature-box">
+                <p class="signature-names">Giulia & Giovanni</p>
             </div>
         </div>
     </section>
@@ -164,7 +203,7 @@
     <!-- Location Section -->
     <section class="section">
         <div class="container">
-            <h2 class="text-center mb-5">La Cerimonia</h2>
+            <!-- <h2 class="text-center mb-5">Vi Aspettiamo</h2> -->
             <div class="row g-4 justify-content-center">
                 <!-- Chiesa -->
                 <div class="col-md-6">
@@ -185,7 +224,7 @@
                         <img src="villacannone.jpg" alt="Villa Il Cannone" class="img-fluid">
                         <div class="p-4">
                             <h3>Il Ricevimento</h3>
-                            <p>Villa Il Cannone<br>Marina Palmense (Fermo)</p>
+                            <p>Villa Il Cannone<br>Fermo</p>
                             <a href="https://maps.app.goo.gl/BhTc9q5D5eWA5Rtc6" target="_blank" class="btn btn-custom">
                                 <i class="fas fa-map-marker-alt me-2"></i>Indicazioni
                             </a>
@@ -199,7 +238,6 @@
     <!-- RSVP Section -->
     <section class="section bg-light">
         <div class="container">
-            <!-- <h2 class="text-center mb-5">Conferma la tua presenza</h2> -->
             <div class="text-center">
                 <a href="https://api.whatsapp.com/send?phone=+393345044443"
                    class="btn btn-custom btn-lg">
@@ -212,13 +250,11 @@
     <!-- Regalo Section -->
     <section class="section">
         <div class="container">
-            <!-- <h2 class="text-center mb-5">La vostra presenza è il regalo più grande, ma se desiderate contribuire alla nostra felicità...</h2> -->
             <p class="text-center mb-5">Il dono più grande è festeggiare insieme a voi, ma se desiderate contribuire alla nostra felicità...</p>
-            <div class="row g-4">
+            <div class="row g-4 mt-4">
                 <div class="col-md-6">
                     <div class="gift-option text-center">
                         <i class="fas fa-gift fa-3x mb-4"></i>
-                        <!-- <h3>Lista Nozze</h3> -->
                         <p>Aiutateci a rendere ancora più speciale il nostro futuro insieme</p>
                         <a href="#" class="btn btn-custom">Lista Nozze</a>
                     </div>
@@ -226,7 +262,6 @@
                 <div class="col-md-6">
                     <div class="gift-option text-center">
                         <i class="fas fa-plane fa-3x mb-4"></i>
-                        <!-- <h3>Luna di Miele</h3> -->
                         <p>Contribuite a realizzzare il viaggio dei nostri sogni</p>
                         <a href="#" class="btn btn-custom">Luna di Miele</a>
                     </div>
