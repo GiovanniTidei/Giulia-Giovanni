@@ -147,6 +147,18 @@
         .section.bg-light {
             background-color: var(--light-color);
         }
+
+       
+
+    .final-image-section {
+        height: 100vh;
+        background-image: url('noi.jpeg');
+        background-size: cover;
+        background-position: center; /* This crops 20% from the top */
+        position: relative;
+        margin: 0;
+        padding: 0;
+    }
     </style>
 </head>
 <body>
@@ -157,7 +169,7 @@
                 <div class="text-background">
                     <!-- <h1 class="display-1 mb-4">Giovanni & Giulia</h1> -->
                     <p class="lead mb-4">12 Luglio 2025</p>
-                    <p class="lead">Vi invitiamo al nostro Matrimonio</p>
+                    <p class="lead">Ci sposiamo!!!</p>
                 </div>
             </div>
         </div> 
@@ -270,6 +282,18 @@
             </div>
         </div>
     </section>
+ 
+     <!-- Final Image Section -->
+<section class="final-image-section">
+    <div class="hero-overlay">
+        <div class="container">
+            <br><br><br>
+            <div class="text-background mt-5">
+                <p class="lead">Vi aspettiamo!</p>
+            </div>
+        </div>
+    </div>
+</section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -292,6 +316,14 @@
 
         setInterval(updateCountdown, 1000);
         updateCountdown();
+
+         // Auto scroll after 3 seconds
+    setTimeout(function() {
+        const signatureSection = document.querySelector('.signature-section');
+        signatureSection.scrollIntoView({ 
+            behavior: 'smooth'
+        });
+    }, 3000);
     </script>
 </body>
 </html>
