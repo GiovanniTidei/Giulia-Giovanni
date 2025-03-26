@@ -15,7 +15,8 @@
 
         body {
             background-color: var(--light-color);
-            padding: 2rem 0;
+            padding: 0;
+            margin: 0;
         }
 
         .causale-note {
@@ -28,16 +29,18 @@
         }
 
         .main-image {
-            max-height: 400px;
-            width: 100%;
-            object-fit: cover;
-            border-radius: 8px;
-       
-        
-        }
+        width: 100%;
+        max-width: 100vw;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
 
         .container {
             max-width: 800px;
+            padding-top: 2rem;
         }
 
         a {
@@ -53,9 +56,10 @@
     </style>
 </head>
 <body>
+    <img src="mada.jpeg" alt="Madagascar" class="main-image mb-1">
+
     <div class="container">
         <div class="text-center">
-            <img src="mada.jpeg" alt="Madagascar" class="main-image mb-4">
             <h3 class="mb-4">Lista nozze presso l'agenzia viaggi <a href="https://www.vivivacanze.com/" target="_blank">Vivi Vacanze </a> di Porto San Giorgio</h3>
             
             <div class="contact-info mb-4">
