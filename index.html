@@ -377,13 +377,21 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-         // Auto scroll after 3 seconds
-    setTimeout(function() {
-        const signatureSection = document.querySelector('.signature-section');
-        signatureSection.scrollIntoView({ 
-            behavior: 'smooth'
+        // Add scroll detection
+        let userHasScrolled = false;
+        window.addEventListener('scroll', function() {
+            userHasScrolled = true;
         });
-    }, 3000);
+
+        // Modified auto scroll
+        setTimeout(function() {
+            if (!userHasScrolled) {
+                const signatureSection = document.querySelector('.signature-section');
+                signatureSection.scrollIntoView({ 
+                    behavior: 'smooth'
+                });
+            }
+        }, 3000);
     </script>
 </body>
 </html>
