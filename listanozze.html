@@ -39,24 +39,35 @@
         .container {
             max-width: 800px;
         }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #4d7ba6;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="text-center">
             <img src="mada.jpeg" alt="Madagascar" class="main-image mb-5">
-            <h3 class="mb-4">Lista nozze presso l'agenzia viaggi Vivi Vacanze di Porto San Giorgio</h3>
+            <h3 class="mb-4">Lista nozze presso l'agenzia viaggi <a href="https://www.vivivacanze.com/" target="_blank">Vivi Vacanze </a> di Porto San Giorgio</h3>
             
             <div class="contact-info mb-4">
-                <p>Viale Cavallotti 21<br>
-                Tel. 0734 070180<br>
+                <!-- <p>Viale Cavallotti 21<br>
+                Tel. 0734 070180<br> -->
                 Mail lista: <a href="mailto:elena@vivivacanze.com">elena@vivivacanze.com</a></p>
             </div>
 
             <div class="bank-info">
-                <h4 class="mb-3">Per fare un bonifico bancario:</h4>
+                <!-- <h4 class="mb-3">Per fare un bonifico bancario:</h4> -->
                 <p>Carifermo Filiale di Sant'Elpidio a Mare<br> 
-                IBAN: <strong style="font-size: 22px;">IT21E0615069720CC0180076983</strong><br> 
+                IBAN: <strong style="font-size: 22px;">IT21E0615069720CC0180076983</strong><br> <br>
                 Destinatario: <strong>Vivi Vacanze Srl</strong><br>
                 Causale: <strong>Tidei Gaffi da ...</strong></p> 
                 <div class="causale-note mt-4">
