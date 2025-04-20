@@ -53,6 +53,28 @@
             color: #4d7ba6;
             text-decoration: none;
         }
+
+
+        #iban {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #iban:hover {
+            transform: scale(1.02);
+            color: var(--primary-color);
+        }
+
+        .alert-copy {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            padding: 15px 25px;
+            border-radius: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
@@ -71,11 +93,11 @@
             <div class="bank-info">
                 <!-- <h4 class="mb-3">Per fare un bonifico bancario:</h4> -->
                 <p>Carifermo Filiale di Sant'Elpidio a Mare<br> 
-                IBAN: <strong style="font-size: 22px;">IT21E0615069720CC0180076983</strong><br> <br>
+                IBAN: <strong style="font-size: 22px;" id="iban">IT21E0615069720CC0180076983</strong><br> <br>
                 Destinatario: <strong>Vivi Vacanze Srl</strong><br>
                 Causale: <strong>Tidei Gaffi da ...</strong></p> 
                 <div class="causale-note mt-4">
-                    <p class="fw-bold text-danger fst-italic mb-0">Specificare nella causale il nome dei mittenti</p>
+                    <p class="fw-bold text-danger fst-italic mb-0">Vi chiediamo di non dimenticare nella causale il nome dei mittenti</p>
                 </div>
             </div>
 
@@ -138,6 +160,24 @@
                 document.querySelector(".alert").innerHTML = "La lista nozze è terminata";
             }
         }, 1000);
+
+        document.getElementById('iban').addEventListener('click', function() {
+            // Copia l'IBAN negli appunti
+            const ibanText = this.innerText.trim();
+            navigator.clipboard.writeText(ibanText);
+
+            // Crea e mostra l'alert
+            const alertDiv = document.createElement('div');
+            alertDiv.className = 'alert-copy alert alert-success bg-success text-white';
+            alertDiv.textContent = 'IBAN copiato! ✓';
+            
+            document.body.appendChild(alertDiv);
+            
+            // Rimuovi l'alert dopo 2 secondi
+            setTimeout(() => {
+                alertDiv.remove();
+            }, 2000);
+        });
     </script>
         </div>
     </div>
