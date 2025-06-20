@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regali - Giulia e Giovanni</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #385e7f;
+            --accent-color: #385e7f;
+            --light-color: #f8f9fa;
+        }
+
+        body {
+            background-color: var(--light-color);
+            padding: 0;
+            margin: 0;
+        }
+
+        .causale-note {
+    padding: 1.5rem;
+    margin: 2rem auto;
+    background: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    max-width: 90%;
+    position: relative;
+    animation: pulse 1.5s infinite;
+    cursor: pointer;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        filter: drop-shadow(0 0 5px rgba(255, 51, 102, 0.5));
+    }
+    50% {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 15px rgba(255, 51, 102, 0.8));
+    }
+    100% {
+        transform: scale(0.95);
+        filter: drop-shadow(0 0 5px rgba(255, 51, 102, 0.5));
+    }
+}
+
+.causale-note i {
+    color: #ff3366; /* Rosso corallo */
+    font-size: 3.5rem;
+    transition: transform 0.3s ease;
+}
+
+.causale-note:hover i {
+    transform: scale(1.15);
+}
+
+
+
+        .main-image {
+            width: 100%;
+            max-width: 100vw;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            padding-top: 3rem;
+        }
+
+        #iban {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #iban:hover {
+            transform: scale(1.02);
+            color: var(--primary-color);
+        }
+
+        .alert-copy {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            padding: 15px 25px;
+            border-radius: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Stili per la sezione firma */
+        .signature-section {
+            padding: 2rem 0;
+            text-align: center;
+            background-color: var(--light-color);
+        }
+
+        .signature-box {
+            display: inline-block;
+            padding: 2rem;
+            border-top: 1px solid var(--accent-color);
+            border-bottom: 1px solid var(--accent-color);
+        }
+
+        .signature-names {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin: 0;
+            color: var(--primary-color);
+        }
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #4682B4; /* Changed to Steel Blue */
+            --light-color: #F0F8FF; /* Changed to Alice Blue */
+            --background-color: #F0F8FF; /* Changed to match light-color */
+        }
+        
+        body {
+    font-family: 'Didot', 'Bodoni MT', 'Palatino', 'Book Antiqua', 'Garamond', serif;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+}
+    </style>
+</head>
+<body>
+    <!-- <img src="mada.jpeg" alt="Madagascar" class="main-image mb-1"> -->
+
+    <div class="container">
+        <div class="text-center">
+            <section class="signature-section">
+                <div class="container">
+                    <div class="signature-box">
+                         <p class="signature-names">Giulia & Giovanni</p> <br>
+                         <p class="signature-names" style="font-size: 25px;">12 luglio 2025</p>
+        
+                    </div>
+                </div>
+            </section>
+            <div class="bank-info">
+                <p style="font-size: 20px;">beneficiario: 
+                    Giovanni Tidei<br> 
+                IBAN: <p id="iban" style="font-size: 20px;">IT96W0306234210000002252374</p><br>
+                <!-- Causale: <strong>Matrimonio Gaffi Tidei</strong></p> -->
+                <div class="causale-note mt-4">
+                    <div>
+                      <a href="index.html"> <i class="fas fa-heart"></i></a> 
+                        
+                    </div>
+                </div>
+
+
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('iban').addEventListener('click', function() {
+            // Copia l'IBAN negli appunti
+            const ibanText = this.innerText.trim();
+            navigator.clipboard.writeText(ibanText);
+
+            // Crea e mostra l'alert
+            const alertDiv = document.createElement('div');
+            alertDiv.className = 'alert-copy alert alert-success bg-success text-white';
+            alertDiv.textContent = 'IBAN copiato! ✓';
+            
+            document.body.appendChild(alertDiv);
+            
+            // Rimuovi l'alert dopo 2 secondi
+            setTimeout(() => {
+                alertDiv.remove();
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
